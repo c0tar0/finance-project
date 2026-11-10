@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Почему подростки не умеют распоряжаться деньгами</title>
+<style>
+:root{--bg:#f3f7f5;--surface:#fff;--ink:#0f2a2e;--muted:#4d6468;--line:#d3e0dc;--gold:#f2b632;--on-gold:#2a1f00;--need:#1f7a6d;--want:#7a5cd6;--save:#e0a020;--ok:#1f7a4d;--bad:#b3392f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1d20;--surface:#13292d;--ink:#e8f1ee;--muted:#9bb2b5;--line:#244045;--need:#4cc2b0;--want:#a590f0;--save:#f2b632;--ok:#5fd19a;--bad:#ff8a7e}}
+:root[data-theme="dark"]{--bg:#0c1d20;--surface:#13292d;--ink:#e8f1ee;--muted:#9bb2b5;--line:#244045;--need:#4cc2b0;--want:#a590f0;--save:#f2b632;--ok:#5fd19a;--bad:#ff8a7e}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+nav{display:flex;gap:18px;flex-wrap:wrap;padding:18px 0;font-size:15px;color:var(--muted)}
+nav a{text-decoration:none}nav a:hover{color:var(--ink);text-decoration:underline}
+h1{font-size:clamp(34px,6.5vw,64px);line-height:1.05;letter-spacing:-.03em;margin:8px 0 14px;max-width:16ch}
+h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 14px}
+section{padding:46px 0;border-top:1px solid var(--line)}
+p{max-width:68ch;margin:0 0 14px}
+.lead{font-size:19px;color:var(--muted);max-width:56ch}
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:26px}
+.tool label{font-weight:600}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0 18px}
+input[type=number]{font:inherit;font-size:22px;width:150px;padding:8px 12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+.chips button{font:inherit;font-size:15px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.chips button:hover{background:var(--gold);color:var(--on-gold);border-color:var(--gold)}
+.bar{display:flex;height:44px;border-radius:12px;overflow:hidden;gap:3px}
+.bar div{transition:flex-basis .35s}
+.b1{background:var(--need)}.b2{background:var(--want)}.b3{background:var(--save)}
+.split{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.split div{border-left:6px solid;padding:2px 0 2px 12px}
+.split b{display:block;font-size:24px;letter-spacing:-.01em}
+.split span{font-size:14px;color:var(--muted)}
+.s1{border-color:var(--need)}.s2{border-color:var(--want)}.s3{border-color:var(--save)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.box h3{margin:0 0 6px;font-size:18px}.box p{margin:0;font-size:15.5px;color:var(--muted)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted);font-size:16px}
+details em{display:block;margin-top:6px;font-size:15px}
+.rules{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.rules li{display:grid;grid-template-columns:28px 1fr;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.rules i{width:22px;height:22px;border-radius:50%;background:var(--gold);margin-top:3px;display:block}
+.rules b{display:block}.rules span{color:var(--muted);font-size:15.5px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.q p{font-weight:600;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16px;margin-bottom:8px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--gold)}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--bg))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--bg))}
+.fb{min-height:1.4em;font-size:15px;color:var(--muted);margin:2px 0 0}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:15px}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
+.scroll{overflow-x:auto}
+.note{border-left:5px solid var(--gold);padding:10px 16px;background:var(--surface);border-radius:0 10px 10px 0}
+ul.src{color:var(--muted);font-size:15px;padding-left:20px}
+footer{padding:30px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{font:inherit;font-size:15px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--gold);color:var(--on-gold);border-color:var(--gold);font-weight:600}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.tl li{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:12px 16px}
+.out{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:6px 0 0}
+.chk{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
+.chk label{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--gold)}
+.chk input:checked+span{text-decoration:line-through;color:var(--muted)}
+.prog{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.prog div{height:100%;width:0;background:var(--ok);transition:width .3s}
+td input{font:inherit;width:100%;min-width:80px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+@media (max-width:560px){.split{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Разделы"><a href="#problem">Проблема</a><a href="#causes">Причины</a><a href="#rules">7 правил</a><a href="#tips">Советы</a><a href="#quiz">Тест</a><a href="#goal">Копилка</a><a href="#week">Неделя</a><a href="#myths">Мифы</a><a href="#survey">Опрос</a><a href="#sources">Источники</a></nav>
+
+<header style="padding:30px 0 40px">
+<p class="lead" style="margin-bottom:4px">Индивидуальный проект, 10–11 класс · Иван</p>
+<h1>Куда уходят твои деньги?</h1>
+<p class="lead">Почему подростки не умеют распоряжаться деньгами и как начать это исправлять. Попробуй главный приём проекта прямо здесь.</p>
+
+<div class="tool">
+<label for="amt">Сколько денег у тебя в месяц, ₽?</label>
+<div class="row"><input id="amt" type="number" min="0" step="100" value="3000" inputmode="numeric">
+<span class="chips"><button type="button" data-v="1000">1 000</button> <button type="button" data-v="3000">3 000</button> <button type="button" data-v="5000">5 000</button></span></div>
+<div class="bar" role="img" aria-label="Деление денег в пропорции 50 на 30 на 20"><div class="b1" style="flex-basis:50%"></div><div class="b2" style="flex-basis:30%"></div><div class="b3" style="flex-basis:20%"></div></div>
+<div class="split">
+<div class="s1"><b id="r1">1 500 ₽</b><span>Нужное (50%): проезд, обеды, школа</span></div>
+<div class="s2"><b id="r2">900 ₽</b><span>Желаемое (30%): игры, одежда, кафе</span></div>
+<div class="s3"><b id="r3">600 ₽</b><span>Накопления (20%): копилка, вклад</span></div>
+</div>
+</div>
+</header>
+
+<section id="problem">
+<h2>О чём проект</h2>
+<p>У подростков уже есть карты, электронные кошельки и платные игры, а в школе планировать бюджет почти не учат. Итог: импульсивные траты, забытые подписки, мошенники. Во взрослой жизни те же привычки превращаются в долги и микрозаймы.</p>
+<div class="grid">
+<div class="box"><h3>Цель</h3><p>Выявить причины финансовой неграмотности подростков и создать памятку, которая помогает формировать навыки обращения с деньгами.</p></div>
+<div class="box"><h3>Гипотеза</h3><p>Подростки плохо управляют деньгами не из-за нехватки денег, а из-за отсутствия системного финансового образования в школе и в семье.</p></div>
+<div class="box"><h3>Методы</h3><p>Анализ литературы, анонимное анкетирование сверстников, сравнение, обобщение, моделирование бюджета.</p></div>
+<div class="box"><h3>Продукт</h3><p>Памятка «7 правил обращения с деньгами» и шаблон личного бюджета на месяц.</p></div>
+</div>
+</section>
+
+<section id="causes">
+<h2>Почему так происходит</h2>
+<p>Нажми на причину, чтобы увидеть пример.</p>
+<details><summary>Нет системного обучения</summary><p>В школе финансы изучают эпизодически, а в семье о деньгах говорят мало или только в связи с запретами.</p><em>Пример: подросток не знает, как составить бюджет, потому что его этому никто не учил.</em></details>
+<details><summary>Деньги «приходят сами»</summary><p>Когда карманные деньги не связаны с усилием и ответственностью, их ценность снижается.</p><em>Пример: деньги закончились за три дня, и родители дали ещё.</em></details>
+<details><summary>Безналичные платежи</summary><p>Платить картой психологически легче, чем отдавать наличные: потеря не ощущается. Этот эффект «боли платежа» описали Прелец и Левенштейн.</p><em>Пример: покупка в приложении в один клик, без раздумий.</em></details>
+<details><summary>Реклама и соцсети</summary><p>Блогеры и маркетологи формируют желание купить «прямо сейчас».</p><em>Пример: покупка вещи «как у всех».</em></details>
+<details><summary>Игровая экономика</summary><p>Внутриигровые покупки и подписки размывают понимание реальной цены.</p><em>Пример: автосписание за подписку, о которой забыли.</em></details>
+<details><summary>Незрелость самоконтроля</summary><p>Способность откладывать удовольствие продолжает формироваться в подростковом возрасте. Это навык, который можно тренировать, а не врождённая черта.</p><em>Пример: выбор «купить сейчас» вместо «накопить на большее».</em></details>
+<details><summary>Пример взрослых</summary><p>Подростки копируют финансовое поведение родителей.</p><em>Пример: в семье не копят и берут кредиты на мелкие покупки.</em></details>
+<p class="note" style="margin-top:18px">По Гражданскому кодексу РФ подростки 14–18 лет распоряжаются заработком и стипендией, а крупные сделки совершают с согласия родителей. Самостоятельность появляется поэтапно, поэтому учиться нужно заранее.</p>
+</section>
+
+<section id="rules">
+<h2>Памятка: 7 правил обращения с деньгами</h2>
+<ul class="rules">
+<li><i></i><div><b>Знай свои деньги</b><span>Записывай каждый доход и расход хотя бы в заметках телефона.</span></div></li>
+<li><i></i><div><b>Заплати себе первым</b><span>Получил деньги — сразу отложи часть (ориентир: 10–20%), остальное трать.</span></div></li>
+<li><i></i><div><b>Раздели деньги на три части</b><span>Нужное, желаемое, накопления. Ориентир: 50/30/20.</span></div></li>
+<li><i></i><div><b>Правило 24 часов</b><span>Хочется необязательную покупку? Подожди сутки. Если желание прошло, ты сэкономил.</span></div></li>
+<li><i></i><div><b>Копи на цель</b><span>Запиши, что хочешь купить, сколько это стоит и к какому сроку.</span></div></li>
+<li><i></i><div><b>Береги данные</b><span>Никому не называй код из СМС, CVV и пароли. Если звонят «из банка», положи трубку и перезвони сам по номеру на карте.</span></div></li>
+<li><i></i><div><b>Проверяй подписки и игровые покупки</b><span>Раз в месяц смотри автосписания и отключай то, чем не пользуешься.</span></div></li>
+</ul>
+</section>
+
+<section id="tips">
+<h2>Советы на каждый день</h2>
+<p>Выбери тему и забери то, что подойдёт тебе.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<ul class="tl" id="tiplist"></ul>
+</section>
+
+<section id="quiz">
+<h2>Проверь себя</h2>
+<p>Девять вопросов: первые два из анкеты проекта, остальные про проценты, подписки и мошенников.</p>
+<p class="note" id="score" aria-live="polite">Отвечено: 0 из 9. Верно: 0.</p>
+<div class="q" data-right="1"><p>У тебя 1 000 ₽ на вкладе под 10% годовых. Сколько будет через год, если ничего не снимать?</p>
+<button class="opt" type="button">1 010 ₽</button><button class="opt" type="button">1 100 ₽</button><button class="opt" type="button">1 200 ₽</button><button class="opt" type="button">Не знаю</button><p class="fb" aria-live="polite"></p></div>
+<div class="q" data-right="2"><p>Тебе звонят «из банка» и просят назвать код из СМС. Что ты сделаешь?</p>
+<button class="opt" type="button">Назову код</button><button class="opt" type="button">Задам уточняющие вопросы и назову</button><button class="opt" type="button">Положу трубку и перезвоню в банк сам</button><button class="opt" type="button">Не знаю</button><p class="fb" aria-live="polite"></p></div>
+</section>
+
+<section id="goal">
+<h2>Копилка и бюджет</h2>
+<div class="grid">
+<div class="tool" style="margin:0"><h3 style="margin:0 0 8px">Сколько откладывать на цель?</h3>
+<label for="gp">Цена, ₽</label><div class="row"><input id="gp" type="number" min="0" value="12000" inputmode="numeric"></div>
+<label for="gm">Срок, месяцев</label><div class="row"><input id="gm" type="number" min="1" value="6" inputmode="numeric"></div>
+<p class="out" id="gout"></p></div>
+<div class="tool" style="margin:0"><h3 style="margin:0 0 8px">Мой бюджет на месяц</h3>
+<div class="scroll"><table style="min-width:0"><tr><th>Статья</th><th>План</th><th>Факт</th><th>Разница</th></tr><tbody id="bt"></tbody></table></div>
+<p class="fb">Разница = план − факт. Минус значит, что потратил больше плана.</p></div>
+</div>
+</section>
+
+<section id="week">
+<h2>Челлендж на неделю</h2>
+<p>Семь небольших заданий. Отмечай, что сделал.</p>
+<ul class="chk" id="chk"></ul>
+<div class="prog" aria-hidden="true"><div id="pg"></div></div>
+<p class="fb" id="pt" aria-live="polite"></p>
+</section>
+
+<section id="myths">
+<h2>Мифы о деньгах</h2>
+<details><summary>«Чтобы копить, нужно много денег»</summary><p>Регулярность важнее суммы. По 200 ₽ в неделю за год получится 10 400 ₽.</p></details>
+<details><summary>«Платить картой — это не настоящие траты»</summary><p>Деньги на карте так же конечны. Просто при безналичной оплате потерю труднее почувствовать, поэтому учёт расходов особенно нужен.</p></details>
+<details><summary>«Мошенники звонят только пожилым»</summary><p>Школьников они тоже находят: через игры, соцсети, «лёгкий заработок» и «розыгрыши призов».</p></details>
+<details><summary>«Финансы — это взрослое дело»</summary><p>Реальная самостоятельность приходит поэтапно, и привычки закладываются заранее. Начинать лучше сейчас.</p></details>
+<details><summary>«Скидка — это всегда выгодно»</summary><p>Скидка на вещь, которая тебе не нужна, всё равно трата. Выгодно только то, что ты купил бы и без скидки.</p></details>
+</section>
+
+<section id="survey">
+<h2>Опрос сверстников</h2>
+<p class="note">Результаты опроса пока не добавлены. Когда опрос будет проведён, впиши числа в таблицу ниже в файле проекта и обнови эту страницу.</p>
+<p>Анонимная анкета из 12 вопросов для подростков 12–17 лет, желательно 30–50 респондентов. Гипотеза подтверждается, если меньше половины ведут учёт расходов и откладывают деньги, а школа и семья редко называются источником знаний о деньгах.</p>
+<div class="scroll"><table>
+<tr><th>Вопрос</th><th>Что проверяем</th><th>Результат</th></tr>
+<tr><td>Ведёте ли учёт расходов?</td><td>Поведение</td><td>—</td></tr>
+<tr><td>Откладываете ли деньги?</td><td>Поведение</td><td>—</td></tr>
+<tr><td>Вопросы про процент и звонок «из банка»</td><td>Знания</td><td>—</td></tr>
+<tr><td>Откуда узнаёте о деньгах?</td><td>Источники знаний</td><td>—</td></tr>
+</table></div>
+</section>
+
+<section id="sources">
+<h2>Источники</h2>
+<ul class="src">
+<li>Гражданский кодекс РФ, статьи 26 и 28</li>
+<li>Портал Банка России «Финансовая культура»: fincult.info</li>
+<li>OECD. PISA 2018 Results (Volume IV): Are Students Smart about Money?</li>
+<li>Mischel W. et al. Delay of gratification, 1972; Watts T. et al. Revisiting the marshmallow test, 2018</li>
+<li>Prelec D., Loewenstein G. The red and the black, 1998</li>
+<li>Warren E., Tyagi A. All Your Worth, 2005 (правило 50/30/20)</li>
+</ul>
+</section>
+<footer>Индивидуальный проект · Иван · 2026</footer>
+</div>
+
+<script>
+(function(){
+var a=document.getElementById('amt'),f=function(n){return Math.round(n).toLocaleString('ru-RU')+' ₽'};
+function calc(){var v=Math.max(0,parseFloat(a.value)||0);
+document.getElementById('r1').textContent=f(v*.5);
+document.getElementById('r2').textContent=f(v*.3);
+document.getElementById('r3').textContent=f(v*.2)}
+a.addEventListener('input',calc);
+document.querySelectorAll('.chips button').forEach(function(b){b.addEventListener('click',function(){a.value=b.dataset.v;calc()})});
+var Q=[
+['Что такое инфляция?',['Рост цен, из-за которого на те же деньги можно купить меньше','Скидки в магазинах','Проценты по кредиту','Курс доллара'],0,'Из-за инфляции деньги под подушкой со временем теряют покупательную способность.'],
+['Какую часть денег по правилу 50/30/20 стоит откладывать?',['10%','20%','30%','50%'],1,'50% на нужное, 30% на желаемое, 20% на накопления.'],
+['Подписка стоит 299 ₽ в месяц. Сколько это за год?',['2 990 ₽','3 288 ₽','3 588 ₽','3 000 ₽'],2,'299 × 12 = 3 588 ₽. Мелкие списания складываются в заметную сумму.'],
+['Что из этого относится к «нужному», а не к «желаемому»?',['Новый скин в игре','Проезд до школы','Третья пара кроссовок','Кофе с друзьями'],1,'Нужное — то, без чего не обойтись: проезд, обеды, школьные расходы.'],
+['Пришло сообщение: «Ты выиграл телефон! Введи данные карты». Что делать?',['Ввести данные, ведь это бесплатно','Переслать ссылку друзьям','Не переходить по ссылке и рассказать родителям','Ввести только номер карты'],2,'Это фишинг. Данные карты и коды нельзя вводить на сомнительных сайтах.'],
+['Зачем нужно правило 24 часов?',['Чтобы быстрее потратить деньги','Чтобы отсеять импульсивные покупки','Чтобы получить скидку','Чтобы платить по вторникам'],1,'Если через сутки желание прошло, покупка была лишней, и ты сэкономил.'],
+['Нужно накопить 6 000 ₽ за 3 месяца. Сколько откладывать в месяц?',['1 000 ₽','1 500 ₽','2 000 ₽','3 000 ₽'],2,'6 000 ÷ 3 = 2 000 ₽ в месяц, примерно по 460 ₽ в неделю.']
+];
+var sec=document.getElementById('quiz'),score=0,answered=0,total=Q.length+2;
+function upd(){document.getElementById('score').textContent='Отвечено: '+answered+' из '+total+'. Верно: '+score+'.'}
+Q.forEach(function(d){var q=document.createElement('div');q.className='q';q.dataset.right=d[2];q.dataset.exp=d[3];
+var h='<p>'+d[0]+'</p>';d[1].forEach(function(t){h+='<button class="opt" type="button">'+t+'</button>'});
+q.innerHTML=h+'<p class="fb" aria-live="polite"></p>';sec.appendChild(q)});
+document.querySelectorAll('.q').forEach(function(q){
+var right=+q.dataset.right,opts=q.querySelectorAll('.opt'),fb=q.querySelector('.fb');
+opts.forEach(function(o,i){o.addEventListener('click',function(){
+opts.forEach(function(x){x.disabled=true});answered++;if(i===right)score++;upd();
+opts[right].classList.add('right');
+if(i===right){fb.textContent='Верно. '+(q.dataset.exp||'')}else{o.classList.add('wrong');fb.textContent='Не совсем. '+(q.dataset.exp||'Правильный ответ выделен.')}
+})})});
+})();
+</script>
+<script>
+(function(){
+var T={'Копить':['Заведи отдельную копилку или накопительный счёт, чтобы накопления не смешивались с тратами.','Откладывай часть сразу в день получения денег, а не «что останется».','Разбей большую цель на недели: небольшая сумма не пугает.','Раз в месяц смотри, сколько накопил, и отмечай прогресс.'],
+'Тратить':['Перед покупкой спроси себя: мне это нужно или просто хочется?','Сравни цену в двух-трёх местах.','Не заходи в магазины и маркетплейсы «просто посмотреть».','Отпишись от рассылок и уведомлений о скидках.'],
+'Безопасность':['Код из СМС, CVV и пароли не называй никому, даже «сотруднику банка».','Не переходи по ссылкам из неизвестных сообщений.','«Лёгкий заработок» с предоплатой почти всегда обман.','Если что-то случилось, сразу скажи родителям: чем раньше, тем больше шансов вернуть деньги.'],
+'Игры и подписки':['Поставь себе лимит на игровые покупки в месяц.','Не привязывай карту к играм и приложениям, если можно обойтись.','Раз в месяц проверяй автосписания и отключай лишнее.','Помни: внутриигровая валюта куплена за настоящие деньги.'],
+'Заработок':['Подработка по возрасту и с согласия родителей: помощь соседям, продажа ненужных вещей, репетиторство для младших.','Навык (рисунок, монтаж, программирование) со временем приносит больше, чем разовые заработки.','Считай цену покупки в часах работы: так видно, чего она стоит на самом деле.']};
+var tb=document.getElementById('tabs'),tl=document.getElementById('tiplist');
+function show(k){tl.innerHTML='';T[k].forEach(function(t){var li=document.createElement('li');li.textContent=t;tl.appendChild(li)});
+tb.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-selected',b.textContent===k)})}
+Object.keys(T).forEach(function(k){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=k;b.addEventListener('click',function(){show(k)});tb.appendChild(b)});
+show('Копить');
+var gp=document.getElementById('gp'),gm=document.getElementById('gm'),go=document.getElementById('gout');
+function g(){var p=parseFloat(gp.value)||0,m=Math.max(1,parseFloat(gm.value)||1);go.textContent=Math.ceil(p/m).toLocaleString('ru-RU')+' ₽ в месяц, около '+Math.ceil(p/(m*4.345)).toLocaleString('ru-RU')+' ₽ в неделю'}
+gp.addEventListener('input',g);gm.addEventListener('input',g);g();
+var bt=document.getElementById('bt');
+['Доходы','Нужное','Желаемое','Накопления'].forEach(function(n){var r=document.createElement('tr');r.innerHTML='<td>'+n+'</td><td><input type="number" inputmode="numeric" aria-label="'+n+', план"></td><td><input type="number" inputmode="numeric" aria-label="'+n+', факт"></td><td class="d">—</td>';
+var ins=r.querySelectorAll('input'),d=r.querySelector('.d');
+ins.forEach(function(i){i.addEventListener('input',function(){if(ins[0].value===''||ins[1].value===''){d.textContent='—';return}d.textContent=(parseFloat(ins[0].value)-parseFloat(ins[1].value)).toLocaleString('ru-RU')})});bt.appendChild(r)});
+var C=['Записать все траты за день','Придумать цель для накопления','Отложить первые 10% от карманных денег','Прожить день без необязательных покупок','Проверить подписки и автосписания','Применить правило 24 часов к одной покупке','Рассказать другу одно правило из памятки'];
+var ck=document.getElementById('chk'),pg=document.getElementById('pg'),pt=document.getElementById('pt');
+function p(){var n=ck.querySelectorAll('input:checked').length;pg.style.width=(n/C.length*100)+'%';pt.textContent='Выполнено: '+n+' из '+C.length+(n===C.length?'. Отличная работа!':'')}
+C.forEach(function(t){var li=document.createElement('li');li.innerHTML='<label><input type="checkbox"><span></span></label>';li.querySelector('span').textContent=t;li.querySelector('input').addEventListener('change',p);ck.appendChild(li)});p();
+})();
+</script>
+</body>
+</html>
